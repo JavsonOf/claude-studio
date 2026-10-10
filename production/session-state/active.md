@@ -29,7 +29,8 @@ HTML (single file, no install).
 - [x] Phase 5: implemented `prototypes/game-design-loop-concept/prototype.html` (smoke-tested in headless Chromium, no JS errors)
 - [x] Phase 6: playtest debrief (PARTIALLY CONFIRMED, verdict PROCEED)
 - [x] Phase 7: REPORT.md + prototypes/index.md written
-- [ ] Next: /design-review design/gdd/game-concept.md  <- current
+- [x] /design-review game-concept.md: NEEDS REVISION -> revised in-session (log: design/gdd/reviews/game-concept-review-log.md)
+- [ ] Next: re-review in a fresh session: /design-review design/gdd/game-concept.md  <- current
 
 ## Open questions
 - Review mode: lean (CD-PLAYTEST skipped)
