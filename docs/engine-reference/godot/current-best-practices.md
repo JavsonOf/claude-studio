@@ -1,9 +1,29 @@
 # Godot — Current Best Practices
 
-Last verified: 2026-02-12 | Engine: Godot 4.6
+Last verified: 2026-10-10 | Engine: Godot 4.7.2
 
 Practices that are **new or changed** since the model's training data (~4.3).
 This supplements (not replaces) the agent's built-in knowledge.
+
+## 4.7 Practices
+
+- **Animate UI with offset transforms**: Use `Control.offset_transform_*`
+  (position/rotation/scale offsets) to animate buttons, panels and popups
+  inside Containers. The Container no longer resets these, so no wrapper
+  nodes are needed.
+- **Window stretch for UI-heavy games**: New projects default to stretch mode
+  `canvas_items` with aspect `expand` — keep this for UIs that must scale
+  across desktop resolutions and phone screens.
+- **Input device checks**: Never test `device == 0` for mouse/keyboard.
+  Check the event type (`InputEventMouse`, `InputEventKey`) or compare to
+  `InputEvent.DEVICE_ID_MOUSE` / `InputEvent.DEVICE_ID_KEYBOARD`.
+- **Line drawing**: `CanvasItem` lines no longer get an antialiasing feather —
+  pick line widths for the final look (relevant for custom charts/graphs).
+- **RichTextLabel images**: Use `RichTextLabel.ImageUnit` for image width/height
+  units; sizes are `float`.
+- **C# accessibility**: `Control.AccessibilityLive` uses
+  `AccessibilityServer.AccessibilityLiveMode`.
+- **Assets**: The editor's new Asset Store replaces the Asset Library.
 
 ## GDScript (4.5+)
 

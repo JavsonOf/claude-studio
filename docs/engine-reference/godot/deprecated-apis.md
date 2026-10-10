@@ -1,6 +1,6 @@
 # Godot — Deprecated APIs
 
-Last verified: 2026-02-12
+Last verified: 2026-10-10
 
 If an agent suggests any API in the "Deprecated" column, it MUST be replaced
 with the "Use Instead" column.
@@ -31,6 +31,18 @@ with the "Use Instead" column.
 | `AnimationPlayer.method_call_mode` | `AnimationMixer.callback_mode_method` | 4.3 | Moved to base class |
 | `AnimationPlayer.playback_active` | `AnimationMixer.active` | 4.3 | Moved to base class |
 
+## Renamed / Retyped in 4.7
+
+| Deprecated | Use Instead | Since | Notes |
+|------------|-------------|-------|-------|
+| `RichTextLabel.ImageUpdateMask.UPDATE_WIDTH_IN_PERCENT` | `ImageUpdateMask.UPDATE_WIDTH_UNIT` | 4.7 | Enum field renamed |
+| `RichTextLabel.add_image(..., width_in_percent: bool, height_in_percent: bool)` | `add_image(..., width_unit: RichTextLabel.ImageUnit, height_unit: RichTextLabel.ImageUnit)` | 4.7 | Same for `update_image`; `width`/`height` are now `float` |
+| `DisplayServer.AccessibilityLiveMode` (for `Control.accessibility_live`) | `AccessibilityServer.AccessibilityLiveMode` | 4.7 | Breaks C# source |
+| `Animation.length` as `float` (C#) | `double` | 4.7 | Breaks C# source |
+| `RenderingServer.particles_request_process_time(time)` | `particles_request_process_time(process_time, process_time_residual)` | 4.7 | Parameter renamed |
+| `EditorSceneFormatImporter.IMPORT_*` constants | `EditorSceneFormatImporter.ImportFlags.*` | 4.7 | Moved into enum |
+| `AudioEffectSpectrumAnalyzer.tap_back_pos` | — (removed) | 4.7 | No replacement |
+
 ## Patterns (Not Just APIs)
 
 | Deprecated Pattern | Use Instead | Why |
@@ -41,3 +53,5 @@ with the "Use Instead" column.
 | `Texture2D` in shader parameters | `Texture` base type | Changed in 4.4 |
 | Manual post-process viewport chains | `Compositor` + `CompositorEffect` | Structured post-processing (4.3+) |
 | GodotPhysics3D for new projects | Jolt Physics 3D | Default since 4.6; better stability |
+| `event.Device == 0` to detect mouse/keyboard | Check event type, or compare to `InputEvent.DEVICE_ID_MOUSE` / `DEVICE_ID_KEYBOARD` | Device IDs changed in 4.7 |
+| Fighting Containers to animate child Controls (wrapper nodes, manual position resets) | `Control.offset_transform_*` | Added in 4.7 |
