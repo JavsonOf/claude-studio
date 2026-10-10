@@ -27,8 +27,9 @@ HTML (single file, no install).
 - [x] Phase 3: path chosen (HTML)
 - [x] Phase 4: plan approved
 - [x] Phase 5: implemented `prototypes/game-design-loop-concept/prototype.html` (smoke-tested in headless Chromium, no JS errors)
-- [ ] Phase 6: playtest debrief  <- current (waiting for user to play 6 years and answer 5 debrief questions)
-- [ ] Phase 7: REPORT.md + prototypes/index.md
+- [x] Phase 6: playtest debrief (PARTIALLY CONFIRMED, verdict PROCEED)
+- [x] Phase 7: REPORT.md + prototypes/index.md written
+- [ ] Next: /design-review design/gdd/game-concept.md  <- current
 
 ## Open questions
 - Review mode: lean (CD-PLAYTEST skipped)
